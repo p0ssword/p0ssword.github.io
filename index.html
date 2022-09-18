@@ -1,105 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh" class="no-js">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css">
-    <title>Document</title>
-    <style>
-        :root {
-            --theme-blue: #d9e2f3
-        }
-
-        table {
-            margin: 12px auto;
-        }
-
-        th {
-            text-align: center;
-            font-size: 48px;
-        }
-
-        td {
-            width: 200px;
-            height: 60px;
-            line-height: 60px;
-            border: 1px solid #eee;
-        }
-
-        [rowspan="4"] {
-            height: 240px;
-            text-align: center;
-        }
-
-
-
-        .td-bk {
-            width: 95px;
-            background-color: var(--theme-blue);
-            text-align: center;
-        }
-
-        .text-c {
-            text-align: center;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>P0SSWORD</title>
+  <meta name="Description" content="Home Page of iissnan">
+  <meta name="color-scheme" content="dark light">
+  <script>(function (H) { H.className = H.className.replace(/\bno-js\b/, 'js') })(document.documentElement)</script>
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
 </head>
 
 <body>
-    <table border="1" cellpadding="0">
-        <thead>
-            <th colspan="5">个人简历</th>
-        </thead>
-        <tbody>
-            <!-- <td class="td-bk"></td> -->
-            <tr>
-                <td class="td-bk">求职意向</td>
-                <td colspan="4">WEB前端开发</td>
-            </tr>
-            <tr>
-                <td class="td-bk">姓名</td>
-                <td>陈某人</td>
-                <td class="td-bk">出生年月</td>
-                <td>2000.10</td>
-                <td rowspan="4">照片</td>
-            </tr>
-            <tr>
-                <td class="td-bk">民族</td>
-                <td>汉</td>
-                <td class="td-bk">政治面貌</td>
-                <td>共青团员</td>
-            </tr>
-            <tr>
-                <td class="td-bk">电话</td>
-                <td>130********</td>
-                <td class="td-bk">毕业院校</td>
-                <td>广州科技职业技术大学</td>
-            </tr>
-            <tr>
-                <td class="td-bk">邮箱</td>
-                <td>****@111.com</td>
-                <td class="td-bk">学历</td>
-                <td>专科</td>
-            </tr>
-            <tr>
-                <td class="td-bk" rowspan="2">教育背景</td>
-                <td class="text-c">起止日期</td>
-                <td class="text-c">学校或院校</td>
-                <td class="text-c">专业</td>
-            </tr>
-            <tr>
-                <td>2020.09-2023.06</td>
-                <td>广州科技职业技术大学</td>
-                <td>计算机应用技术</td>
-            </tr>
-            <tr>
-                <td class="td-bk">个人特长</td>
-                <td colspan="4">熟练掌握基本前端web技术</td>
-            </tr>
-        </tbody>
-    </table>
+  <div class="vi">
+    <h1 class="animate-slide-in-down">P0SSWORD</h1>
+    <div class="quote">
+      <span class="quote-line quote-line-start animate-slide-in-left"></span>
+      <span class="quote-icon quote-icon-start animate-slide-in-down">
+        <i class="icon icon-quotes-left"></i>
+      </span>
+      <p class="quote-content animate-slide-in-down">不积跬步，无以至千里。不积小流，无以成江海。</p>
+      <p class="quote-author animate-slide-in-down">《劝学篇》—— <em>荀子</em></p>
+      <!-- 毒鸡汤api -->
+      <p class="quote-author animate-slide-in-down p-text"></p>
+      <span class="quote-icon quote-icon-end animate-slide-in-up">
+        <i class="icon icon-quotes-right"></i>
+      </span>
+      <span class="quote-line quote-line-end animate-slide-in-right"></span>
+    </div>
+    <div class="links">
+      <a href="https://github.com/p0ssword" class="animate-slide-in-down">GitHub</a>
+    </div>
+    <div class="location">
+      <span class="location-icon animate-slide-in-up">
+        <i class="icon icon-map-pin"></i>
+      </span>
+      <span class="location-text animate-slide-in-down">p0ssword - China</span>
+    </div>
+  </div>
+
+  <script src="assets/vendors/jquery-3.3.1.min.js"></script>
+  <script>
+    $(function () {
+      let SLIDE_IN_DOWN = { opacity: 1, top: 0 };
+      let SLIDE_IN_UP = { opacity: 1, bottom: 0 };
+      let SLIDE_IN_LEFT = { left: 0 };
+      let SLIDE_IN_RIGHT = { right: 0 };
+
+      executeAnimations();
+
+      function executeAnimations() {
+        $.when()
+          .then(animateTitle)
+          .then(animateQuote)
+          .then(animateLinks)
+          .then(animateLocation);
+      }
+
+      function animateTitle() {
+        return animate('h1', SLIDE_IN_DOWN);
+      }
+
+      function animateQuote() {
+        return $.when(
+          animate('.quote-line-start', SLIDE_IN_LEFT),
+          animate('.quote-line-end', SLIDE_IN_RIGHT),
+          animate('.quote-icon-start', SLIDE_IN_DOWN),
+          animate('.quote-icon-end', SLIDE_IN_UP)
+        )
+          .then(function () {
+            return animate('.quote-content', SLIDE_IN_DOWN);
+          })
+          .then(function () {
+            return animate('.quote-author', SLIDE_IN_DOWN);
+          });
+      }
+
+      function animateLinks() {
+        let DELAY_STEP = 200;
+        let elements = $('.links a');
+        let concurrent = $.makeArray(elements)
+          .map(function (element, index) {
+            return animate(element, SLIDE_IN_DOWN, index * DELAY_STEP);
+          });
+
+        return $.when.apply($, concurrent);
+      }
+
+      function animateLocation() {
+        return $.when(
+          animate('.location-icon', SLIDE_IN_UP),
+          animate('.location-text', SLIDE_IN_DOWN)
+        );
+      }
+
+      function animate(selector, properties, delay, options) {
+        delay = delay || 0;
+        return $(selector).delay(delay)
+          .animate(properties, options)
+          .promise();
+      }
+    });
+  </script>
 </body>
 
 </html>
