@@ -1,0 +1,114 @@
+:root {
+    --theme-gray: rgba(200, 200, 200, 0.8);
+    --theme-black: rgba(20, 20, 20, 0.8);
+    --color-black: rgba(20, 20, 20, 0.8);
+    --color-gray: rgba(200, 200, 200, 0.8);
+    --default-background: rgba(255, 255, 255, 0.9);
+}
+
+
+.app {
+    background-color: var(--theme-gray);
+    color: var(--color-black);
+    width: 80%;
+    margin: 10px auto;
+}
+
+.f-l {
+    float: left;
+}
+
+.f-r {
+    float: right;
+}
+
+.clear::before {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 锚点定位 */
+.anchor {
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+}
+
+.anchor ul {
+    margin-right: 24px;
+}
+
+
+
+/* 姓名年龄学历等 */
+.head {
+    width: 100%;
+    height: 200px;
+    background-color: var(--default-background);
+    display: flex;
+}
+
+.head .head-box {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    display: flex;
+    position: relative;
+}
+
+.head .head-box .head-text {
+    flex: 1;
+}
+
+.head .head-box .head-text p {
+    margin: 14px 0;
+}
+
+.head .head-box .head-text p:nth-child(1) {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.head .head-box .head-text p:nth-child(2) {
+    font-size: 12px;
+}
+
+.head .head-box .head-text p:nth-child(3) {
+    font-size: 24px;
+}
+
+.head .head-box .head-text p:nth-child(4) {
+    font-size: 12px;
+}
+
+.head-box .head-text p span {
+    margin: 0 6px;
+}
+
+.head-box .head-text p span:nth-child(1) {
+    margin-left: 0;
+}
+
+.head .head-box .head-photo {
+    position: absolute;
+    right: 0;
+    top: -6px;
+}
+
+.head .head-box .head-photo .img {
+    width: 130px;
+    height: 189px;
+}
+
+.head-box .head-photo .img img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* 基本信息 */
+
+
